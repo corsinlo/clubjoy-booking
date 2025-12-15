@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
       health: '/api/health'
     },
     usage: {
-      'Get orders for provider': 'GET /api/orders?provider=Studio%20Marta%20Mez',
+      'Get orders for provider': 'GET /api/orders?provider=YourProvider',
       'Get specific order': 'GET /api/orders/{order_id}',
       'Get available providers': 'GET /api/orders/providers',
       'Filter by date': 'GET /api/orders?provider=YourProvider&event_date=2025-01-15',
