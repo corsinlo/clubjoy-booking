@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: shopify-bookun-api
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: SHOPIFY_STORE_URL
+        sync: false
+      - key: SHOPIFY_ACCESS_TOKEN
+        sync: false
+      - key: SHOPIFY_API_VERSION
+        value: 2023-10
+      - key: API_KEY
+        generateValue: true
+      - key: COWLENDAR_METADATA_PREFIX
+        value: __cow_
+    regions:
+      - oregon
