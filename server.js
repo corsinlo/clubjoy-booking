@@ -44,7 +44,7 @@ app.use('/api/health', healthRoutes);
 app.get('/', (req, res) => {
   res.json({
     message: 'Shopify Booking API for BookingIt, Bokun, BookingKit & other booking systems',
-    version: '2.1.0',
+    version: '2.1.1',
     endpoints: {
       orders: '/api/orders', // Primary endpoint for booking apps
       providers: '/api/orders/providers', // Get available providers
@@ -66,6 +66,11 @@ app.get('/', (req, res) => {
       'Sync Shopify to BookingKit': 'POST /api/bookingkit/sync',
       'Get BookingKit bookings': 'GET /api/bookingkit/bookings',
       'Health check': 'GET /api/bookingkit/health'
+    },
+    integration_status: {
+      venchi_bookingkit: 'Ready for integration - API keys configured',
+      api_access: 'BookingKit can access /api/orders?provider=venchi with X-API-Key header',
+      webhook_ready: 'Webhook endpoint available at /api/bookingkit/webhooks'
     }
   });
 });
